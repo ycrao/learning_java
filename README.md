@@ -116,3 +116,4 @@ char（字符型）
 - [brianway/java-learning](https://github.com/brianway/java-learning)
 - [winterbe/java8-tutorial](https://github.com/winterbe/java8-tutorial) 中文版 [aalansehaiyang/java8-tutorial](https://github.com/aalansehaiyang/java8-tutorial)
 - [JeffLi1993/java-core-learning-example](https://github.com/JeffLi1993/java-core-learning-example)
+- [HowToDoInJava](https://howtodoinjava.com/java/)

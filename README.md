@@ -205,7 +205,7 @@ public class Variable {
 
 ### 运算符、循环与条件等
 
-运算符、循环、条件与`switch/case` 等知识点，类似于你所熟知的某门语言，如 `javascript/php/c/c++` 等语言，这里限于篇幅不过多赘述。您也可以查阅最后一节提供的参考资源链接来学习相关内容。
+运算符、循环、条件与`switch/case` 等知识点，类似于你所熟知的某门语言，如 `javascript/php/c/c++` 等语言，这里限于篇幅不过多赘述。您可以查阅最后一节提供的参考资源链接来学习相关内容。另外，也可参考本仓库的示例代码： [OperatorTest](examples/src/com/raoyc/demo/OperatorTest) 与  [ControlFlowTest](examples/src/com/raoyc/demo/ControlFlowTest) 。
 
 
 ## 参考资源

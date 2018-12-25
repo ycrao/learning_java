@@ -39,7 +39,7 @@ class Puppy extends Dog {
 
 public class DogTest {
 
-    public static void main(String[] argv) {
+    public static void main(String[] args) {
         /* 创建对象 */
         Puppy myPuppy = new Puppy("tommy", "black");
         /* 通过方法来设定age */

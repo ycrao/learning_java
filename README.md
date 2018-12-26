@@ -22,6 +22,8 @@ Java分为三个体系：
 
 ## 基础知识
 
+>   笔记：https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Java%20%E5%9F%BA%E7%A1%80.md#java-%E4%B8%8E-c-%E7%9A%84%E5%8C%BA%E5%88%AB 。
+
 ### 开发环境配置
 
 受限于篇幅，这里不对开发环境配置做更多的说明，请参考以下链接：
@@ -207,6 +209,36 @@ public class Variable {
 
 运算符、循环、条件与`switch/case` 等知识点，类似于你所熟知的某门语言，如 `javascript/php/c/c++` 等语言，这里限于篇幅不过多赘述。您可以查阅最后一节提供的参考资源链接来学习相关内容。另外，也可参考本仓库的示例代码： [OperatorTest](examples/src/com/raoyc/demo/OperatorTest.java) 与  [ControlFlowTest](examples/src/com/raoyc/demo/ControlFlowTest.java) 。
 
+## 高阶知识 - 数据结构
+
+### 数组
+
+>   数组是用来存储固定大小的同类型元素。
+
+```java
+public class ArrayTest {
+    public static void main(String[] args) {
+        // 数组大小
+        int size = 7;
+        // 定义数组
+        String[] days = new String[size];
+        days[0] = "Sunday";
+        days[1] = "Monday";
+        days[2] = "Tuesday";
+        days[3] = "Wednesday";
+        days[4] = "Thursday";
+        days[5] = "Friday";
+        days[6] = "Saturday";
+
+        System.out.println("7 days in one week:");
+        for (String day : days) {
+            System.out.println(day);
+        }
+    }
+}
+```
+
+排序算法：[冒泡排序](examples/src/com/raoyc/demo/BubbleSort.java) 。
 
 ## 参考资源
 

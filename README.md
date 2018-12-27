@@ -265,6 +265,47 @@ public class VectorTest {
     }
 }
 ```
+### 栈（Stack）
+
+>   栈（ `Stack` ）实现了一个后进先出（ `LIFO` ）的数据结构。你可以把栈理解为对象的垂直分布的栈，当你添加一个新元素时，就将新元素放在其他元素的顶部。当你从栈中取元素的时候，就从栈顶取一个元素。换句话说，最后进栈的元素最先被取出。
+
+### 哈希表（Hashtable）
+
+>   `Hashtable` 类提供了一种在用户定义键结构的基础上来组织数据的手段。
+`Hashtable` 是原始的 `java.util` 的一部分， 是一个 `Dictionary` 具体的实现 。然而，`Java 2` 重构的 `Hashtable` 实现了 `Map` 接口，因此，`Hashtable` 现在集成到了集合框架中。它和 `HashMap` 类很相似，但是它支持同步。像 `HashMap` 一样，`Hashtable` 在哈希表中存储键/值对。当使用一个哈希表，要指定用作键的对象，以及要链接到该键的值。
+
+```java
+import java.util.Enumeration;
+import java.util.Hashtable;
+
+public class HashtableTest {
+
+    public static void main(String[] args) {
+        Hashtable balance = new Hashtable();
+        Enumeration names;
+        String str;
+        double bal;
+
+        balance.put("Zara", new Double(3434.34));
+        balance.put("Mahnaz", new Double(123.22));
+        balance.put("Ayan", new Double(1378.00));
+        balance.put("Daisy", new Double(99.22));
+        balance.put("Qadir", new Double(-19.08));
+
+        // Show all balances in hash table.
+        names = balance.keys();
+        while (names.hasMoreElements()) {
+            str = (String) names.nextElement();
+            System.out.println(str + ": " + balance.get(str));
+        }
+        System.out.println();
+        // Deposit 1,000 into Zara's account
+        bal = ((Double) balance.get("Zara")).doubleValue();
+        balance.put("Zara", new Double(bal + 1000));
+        System.out.println("Zara's new balance: " + balance.get("Zara"));
+    }
+}
+```
 
 ## 参考资源
 

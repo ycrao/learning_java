@@ -211,7 +211,7 @@ public class Variable {
 
 ## 高阶知识 - 数据结构
 
-### 数组 (Array)
+### 数组（Array）
 
 >   数组是用来存储固定大小的同类型元素。
 
@@ -240,7 +240,7 @@ public class ArrayTest {
 
 排序算法：[冒泡排序](examples/src/com/raoyc/demo/BubbleSort.java) 。
 
-### 向量 (Vector)
+### 向量（Vector）
 
 >   向量（ `Vector` ）类和传统数组非常相似，但是 `Vector` 的大小能根据需要动态的变化。和数组一样，Vector对象的元素也能通过索引访问。
 

@@ -6,8 +6,8 @@ import java.util.Hashtable;
 public class HashtableTest {
 
     public static void main(String[] args) {
-        Hashtable balance = new Hashtable();
-        Enumeration names;
+        Hashtable<String, Double> balance = new Hashtable<String, Double>();
+        Enumeration<String> names;
         String str;
         double bal;
 

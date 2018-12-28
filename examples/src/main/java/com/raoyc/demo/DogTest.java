@@ -2,7 +2,7 @@ package com.raoyc.demo;
 
 
 class Dog {
-    static int age = 1;
+    int age = 1;
     String color;
     String name;
     void barking() {

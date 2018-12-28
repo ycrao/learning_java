@@ -25,7 +25,7 @@ public class ThriftClient {
             TProtocol protocol = new TCompactProtocol(transport);
             PingService.Client client = new PingService.Client(protocol);
             transport.open();
-            client.ping();
+            System.out.println(client.ping());
             client.say("Hello from Java");
             System.out.println("Client say by " + this.getClass() + '@' + this.hashCode());
         } catch (TTransportException e) {

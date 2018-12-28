@@ -35,7 +35,7 @@ Java分为三个体系：
 
 ### `Hello World` 示例
 
-编写 `HelloWorld.java` 代码，示例代码位于 `examples/src/com/raoyc/demo/HelloWorld.java` 。
+编写 `HelloWorld.java` 代码，示例代码位于 `examples/src/main/java/com/raoyc/demo/HelloWorld.java` 。
 
 ```java
 package com.raoyc.demo;
@@ -54,7 +54,7 @@ public class HelloWorld {
 
 ```
 mkdir classes
-javac examples/src/com/raoyc/demo/HelloWorld.java -d ./classes
+javac examples/src/main/java/com/raoyc/demo/HelloWorld.java -d ./classes
 java -classpath ./classes com.raoyc.demo.HelloWorld
 Hello Wolrd!
 ```
@@ -94,7 +94,7 @@ char（字符型）
 
 >   类：类是一个模板，它描述一类对象的行为和状态。
 
-示例代码 [DogTest](examples/src/com/raoyc/demo/DogTest.java)
+示例代码 [DogTest](examples/src/main/java/com/raoyc/demo/DogTest.java)
 
 当在一个源文件中定义多个类，并且还有 `import` 语句和 `package` 语句时，要特别注意这些规则。
 
@@ -207,7 +207,7 @@ public class Variable {
 
 ### 运算符、循环与条件等
 
-运算符、循环、条件与`switch/case` 等知识点，类似于你所熟知的某门语言，如 `javascript/php/c/c++` 等语言，这里限于篇幅不过多赘述。您可以查阅最后一节提供的参考资源链接来学习相关内容。另外，也可参考本仓库的示例代码： [OperatorTest](examples/src/com/raoyc/demo/OperatorTest.java) 与  [ControlFlowTest](examples/src/com/raoyc/demo/ControlFlowTest.java) 。
+运算符、循环、条件与`switch/case` 等知识点，类似于你所熟知的某门语言，如 `javascript/php/c/c++` 等语言，这里限于篇幅不过多赘述。您可以查阅最后一节提供的参考资源链接来学习相关内容。另外，也可参考本仓库的示例代码： [OperatorTest](examples/src/main/java/com/raoyc/demo/OperatorTest.java) 与  [ControlFlowTest](examples/src/main/java/com/raoyc/demo/ControlFlowTest.java) 。
 
 ## 高阶知识 - 数据结构
 
@@ -238,7 +238,7 @@ public class ArrayTest {
 }
 ```
 
-排序算法：[冒泡排序](examples/src/com/raoyc/demo/BubbleSort.java) 。
+排序算法：[冒泡排序](examples/src/main/java/com/raoyc/demo/BubbleSort.java) 。
 
 ### 向量（Vector）
 
@@ -317,3 +317,4 @@ public class HashtableTest {
 - [winterbe/java8-tutorial](https://github.com/winterbe/java8-tutorial) 中文版 [aalansehaiyang/java8-tutorial](https://github.com/aalansehaiyang/java8-tutorial)
 - [JeffLi1993/java-core-learning-example](https://github.com/JeffLi1993/java-core-learning-example)
 - [HowToDoInJava](https://howtodoinjava.com/java/)
+- [Java CMS建站系统 - 建站系统 - Trending Projects - Gitee](https://gitee.com/explore/starred/cms?lang=Java)

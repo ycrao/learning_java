@@ -4,6 +4,7 @@ package com.raoyc.thrift.demo;
 import com.raoyc.thrift.demo.service.PingService;
 import com.raoyc.thrift.demo.service.impl.PingServiceImpl;
 import org.apache.thrift.TProcessor;
+import org.apache.thrift.TMultiplexedProcessor;
 import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.server.TThreadedSelectorServer;
 import org.apache.thrift.transport.TFramedTransport;
@@ -19,9 +20,6 @@ public class ThriftServer {
         server.startThriftServer();
     }
 
-    /**
-     * 使用非阻塞式IO，服务端和客户端需要指定TFramedTransport数据传输的方式
-     */
     public void startThriftServer() {
         try {
             TProcessor tprocessor = new PingService.Processor<PingService.Iface>(new PingServiceImpl());

@@ -307,6 +307,34 @@ public class HashtableTest {
 }
 ```
 
+## Thrift Java 示例
+
+### 编写 `thrift` 文件：
+
+```thrift
+namespace java com.raoyc.thrift.demo.service
+service PingService {
+    string ping(),
+    void say(1:string msg)
+}
+```
+
+### 生成 `java` 接口代码文件：
+
+```bash
+mkdir javagen
+thrift -out javagen/ --gen java ping.thrift
+```
+
+执行完之后可以看到 `javagen` 文件夹下多出含包名（`com.raoyc.thrift.demo`）路径的 `PingService.java` 文件。
+
+### 复制改写
+
+移动或复制生成的上一步文件到项目源码对应的包目录下，本示例中即为：`examples/src/main/java/com/raoyc/thrift/demo/service/PingService.java` 。
+
+
+
+
 ## 参考资源
 
 - [Java教程](http://www.runoob.com/java/java-tutorial.html)

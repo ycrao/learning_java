@@ -309,6 +309,8 @@ public class HashtableTest {
 
 ## Thrift Java 示例
 
+>   `Apache Thrift` 相关介绍以及具体语言的示例请参考我的 [learning_thrift](https://github.com/ycrao/learning_java) 仓库。
+
 ### 编写 `thrift` 定义文件：
 
 ```thrift
@@ -384,8 +386,6 @@ Client say by class com.raoyc.thrift.demo.ThriftClient@1406718218
 pong
 Hello from Java
 ```
-
-
 
 ## 参考资源
 

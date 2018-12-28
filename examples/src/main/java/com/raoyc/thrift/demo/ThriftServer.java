@@ -27,15 +27,24 @@ public class ThriftServer {
             TProcessor tprocessor = new PingService.Processor<PingService.Iface>(new PingServiceImpl());
             // 传输通道 - 非阻塞方式
             TNonblockingServerSocket serverTransport = new TNonblockingServerSocket(SERVER_PORT);
-
             // 多线程半同步半异步
             TThreadedSelectorServer.Args tArgs = new TThreadedSelectorServer.Args(serverTransport);
             tArgs.processor(tprocessor);
             tArgs.transportFactory(new TFramedTransport.Factory());
             // 二进制协议
             tArgs.protocolFactory(new TCompactProtocol.Factory());
+            /*
+            链式调用方式
+            TThreadedSelectorServer.Args tArgs =
+            new TThreadedSelectorServer.Args(new TNonblockingServerSocket(SERVER_PORT))
+                .processor(tprocessor)
+                .transportFactory(new TFramedTransport.Factory())
+                .protocolFactory(new TCompactProtocol.Factory());
+            */
+
             // 多线程半同步半异步的服务模型
             TServer server = new TThreadedSelectorServer(tArgs);
+
             System.out.println("ThreadedSelectorServer start....");
             server.serve(); // 启动服务
 

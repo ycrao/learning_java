@@ -309,7 +309,7 @@ public class HashtableTest {
 
 ## Thrift Java 示例
 
-### 编写 `thrift` 文件：
+### 编写 `thrift` 定义文件：
 
 ```thrift
 namespace java com.raoyc.thrift.demo.service
@@ -328,10 +328,62 @@ thrift -out javagen/ --gen java ping.thrift
 
 执行完之后可以看到 `javagen` 文件夹下多出含包名（`com.raoyc.thrift.demo`）路径的 `PingService.java` 文件。
 
-### 复制改写
-
 移动或复制生成的上一步文件到项目源码对应的包目录下，本示例中即为：`examples/src/main/java/com/raoyc/thrift/demo/service/PingService.java` 。
 
+### 编写接口处理类：
+
+编写实例化 `PingService.Iface` 的类，本示例代码位于：`examples/src/main/java/com/raoyc/thrift/demo/service/impl/PingServiceImpl.java`
+
+```java
+package com.raoyc.thrift.demo.service.impl;
+
+import com.raoyc.thrift.demo.service.PingService;
+import org.apache.thrift.TException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class PingServiceImpl implements PingService.Iface {
+    private Logger logger = LoggerFactory.getLogger(PingService.class);
+
+    @Override
+    public String ping() throws TException {
+        System.out.println("pong");
+        return "pong";
+    }
+
+    @Override
+    public void say(String msg) throws TException {
+        System.out.println(msg);
+    }
+}
+```
+
+### 编写服务端与客户端代码：
+
+具体请参考示例代码：
+
+[ThriftServer](examples/src/main/java/com/raoyc/thrift/demo/ThriftServer.java)
+
+[ThriftClient](examples/src/main/java/com/raoyc/thrift/demo/ThriftClient.java)
+
+### 运行：
+
+使用 `IDE` 安装好依赖， 可以很方便的运行 `ThriftServer` 与 ThriftClient 代码。
+
+运行结果大概如下：
+
+```bash
+# start ThriftServer on #terminal#1
+ThreadedSelectorServer start....
+
+
+# start ThriftClient on terminal#2
+Client say by class com.raoyc.thrift.demo.ThriftClient@1406718218
+
+# meanwhile on terminal#1 will display
+pong
+Hello from Java
+```
 
 
 

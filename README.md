@@ -387,6 +387,26 @@ pong
 Hello from Java
 ```
 
+## Quartz 示例
+
+`Quartz` 对任务调度的领域问题进行了高度的抽象，提出了调度器、任务和触发器这3个核心的概念，并在 `org.quartz` 通过接口和类对重要的这些核心概念进行描述。
+ 
+`Quartz` 调度包的两个基本单元是作业和触发器。作业是能够调度的可执行任务，触发器提供了对作业的调度。
+
+调度器：调度器用于将与作业触发器关联，一个作业可关联多个触发器，这样每个触发器被可以触发的作业执行；一个触发器可用于控制多个作业，触发触发时，全部作业将获得调度。`Quartz` 的调度器由 `Scheduler` 接口体现。
+
+作业：只需实现 `org.quartz.job` 接口即可。`Job` 接口包含一个方法 `execute()` ，`execute` 方法体是被调度的作业体。一旦实现 `Job` 接口和 `execute()` 方法， `Quartz` 确定作业运作的时候，它将调用 `execute()` 方法体。
+
+触发器：有`SimpleTrigger` 和 `CronTrigger` 等类型。
+
+参考链接：
+
+- [quartz-core-learning](https://github.com/dufyun/quartz-core-learning)
+- [quartz cron 表达式用法（CronTrigger 教程）](https://blog.csdn.net/shfqbluestone/article/details/51009685)
+- [Quartz 官网](http://www.quartz-scheduler.org/)
+- [Quartz 中文化资料](https://www.w3cschool.cn/quartz_doc/)
+- [Quartz 调度系统入门和调度高可用实现方案](https://www.jianshu.com/p/810400e6a274)
+
 ## 参考资源
 
 - [Java教程](http://www.runoob.com/java/java-tutorial.html)

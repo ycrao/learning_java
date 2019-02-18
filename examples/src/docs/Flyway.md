@@ -38,6 +38,9 @@ create table PERSON (
 flyway migrate -locations=filesystem:/path/to/your/project/examples/src/main/resources/db/migration/ -X
 # 如果已经位于当前迁移数据文件目录，可快捷执行下面命令
 flyway migrate -locations=filesystem:`pwd`
+# 使用更多选项参数方式来执行
+flyway -configFiles=/path/to/flyway/config/flyway.conf migrate
+flyway -user=root -password=root -url=jdbc:mysql://localhost:3306/flyway_test -locations=filesystem:`pwd` migrate
 ```
 
 >   注：

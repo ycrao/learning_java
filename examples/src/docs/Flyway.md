@@ -8,7 +8,7 @@ Flyway教程
 
 安装命令行工具： https://flywaydb.org/documentation/commandline/ 。
 
-`Linux` 下版本，可以使用下列命令安装 `flyway` 。
+`Linux` 系统下，可以使用下列命令安装 `flyway` 。
 
 ```bash
 wget -qO- https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/5.2.4/flyway-commandline-5.2.4-linux-x64.tar.gz | tar xvz && sudo ln -s `pwd`/flyway-5.2.4/flyway /usr/local/bin 
@@ -66,7 +66,7 @@ flyway migrate -locations=filesystem:`pwd`
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.38</version>
+            <version>5.1.47</version>
         </dependency>
     </dependencies>
 </plugin>
@@ -92,6 +92,57 @@ mvn flyway:migrate
 
 出现 `BUILD SUCCESS` 字眼，就说明数据库结构变更已经完成了，可以登录数据库查看。
 
+### 使用 `FLyway API` 方式迁移数据库
+
+在 `pom.xml` 添加依赖：
+
+```xml
+    <dependencies>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>5.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+        </dependency>
+    </dependencies>
+``` 
+
+同上面编写迁移数据文件（不再赘述）。
+
+结合 `Flyway API` 编写迁移代码：
+
+本项目中示例代码位于 [MigrationApp](../main/java/com/raoyc/flyway/MigrationApp.java)。
+
+```java
+package com.raoyc.flyway;
+
+import org.flywaydb.core.Flyway;
+
+public class MigrationApp {
+
+    public static void main(String[] args) {
+        // Create the Flyway instance and point it to the database
+        Flyway flyway = Flyway.configure().dataSource("jdbc:mysql://localhost:3306/flyway_test", "root", "root").load();
+
+        // Start the migration
+        flyway.migrate();
+    }
+
+}
+```
+
+如果您当前使用可以右键执行或者使用 maven 命令：
+
+```bash
+mvn package exec:java -Dexec.mainClass=com.raoyc.flyway.MigrationApp
+```
+
+回显 ` INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema ...` 字眼，就说明数据库结构变更已经完成了，可以登录数据库查看。
+
 ### Flyway 常用命令
 
 ```text
@@ -108,3 +159,4 @@ repair   : Repairs the schema history table
 
 - [快速掌握和使用Flyway](https://blog.waterstrong.me/flyway-in-practice/)
 - [轻松上手数据库版本管理工具Flyway](http://qinghua.github.io/flyway/)
+- [Flyway的简单介绍及使用](https://blog.csdn.net/AinGates/article/details/78063246)

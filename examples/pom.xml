@@ -155,12 +155,43 @@
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>5.2.4</version>
+                <!--
                 <configuration>
                     <url>jdbc:mysql://127.0.0.1:3306/flyway_test</url>
                     <user>root</user>
                     <password>root</password>
                 </configuration>
+                -->
+                <configuration>
+                    <url>${flyway.url}</url>
+                    <user>${flyway.user}</user>
+                    <password>${flyway.password}</password>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <flyway.url>jdbc:mysql://127.0.0.1:3306/flyway_test</flyway.url>
+                <flyway.user>root</flyway.user>
+                <flyway.password>root</flyway.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>release</id>
+            <properties>
+                <flyway.url></flyway.url>
+                <flyway.user></flyway.user>
+                <flyway.password></flyway.password>
+            </properties>
+        </profile>
+    </profiles>
+    <!--
+    xiaosunzhu @ CSDN see https://blog.csdn.net/xiaosunzhu/article/details/76672828
+    -->
 </project>
